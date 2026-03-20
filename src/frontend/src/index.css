@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+
+    /* CampusConnect palette */
+    --background: 1 0 0;
+    --foreground: 0.145 0.01 264;
+
+    --card: 1 0 0;
+    --card-foreground: 0.145 0.01 264;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.145 0.01 264;
+
+    /* Primary blue #2563EB */
+    --primary: 0.488 0.243 264;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary light blue bg */
+    --secondary: 0.957 0.025 264;
+    --secondary-foreground: 0.488 0.243 264;
+
+    --muted: 0.965 0.008 264;
+    --muted-foreground: 0.556 0.01 264;
+
+    /* Accent teal/green #22C55E */
+    --accent: 0.72 0.198 142;
+    --accent-foreground: 1 0 0;
+
+    /* Destructive red #EF4444 */
+    --destructive: 0.577 0.245 27;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.922 0.008 264;
+    --input: 0.922 0.008 264;
+    --ring: 0.488 0.243 264;
+
+    --chart-1: 0.488 0.243 264;
+    --chart-2: 0.72 0.198 142;
+    --chart-3: 0.577 0.245 27;
+    --chart-4: 0.646 0.222 41;
+    --chart-5: 0.6 0.118 184;
+
+    --sidebar: 0.985 0.008 264;
+    --sidebar-foreground: 0.145 0.01 264;
+    --sidebar-primary: 0.488 0.243 264;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.957 0.025 264;
+    --sidebar-accent-foreground: 0.488 0.243 264;
+    --sidebar-border: 0.922 0.008 264;
+    --sidebar-ring: 0.488 0.243 264;
+
+    /* Custom tokens */
+    --success: 0.72 0.198 142;
+    --success-foreground: 1 0 0;
+    --warning: 0.769 0.188 70;
+    --offline: 0.577 0.245 27;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-jakarta;
+    font-size: 16px;
+  }
+}
+
+@layer utilities {
+  .mobile-frame {
+    @apply max-w-[430px] mx-auto min-h-screen relative;
+  }
+
+  .status-available {
+    background-color: oklch(var(--success));
+    color: oklch(var(--success-foreground));
+  }
+
+  .status-offline {
+    background-color: oklch(var(--offline));
+    color: oklch(var(--offline-foreground, 1 0 0));
+  }
+}
